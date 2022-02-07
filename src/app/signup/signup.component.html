@@ -3,14 +3,22 @@
         <div class="col-4 shadow p-5 mx-auto">
             <h3 class="text-center">Sign up here</h3>
             <hr>
-            <form>
-                <input type="text" name="firstName" placeholder="Firstname" class="form-control"> <br/>
-                <input type="text" name="lastName" placeholder="Lastname" class="form-control"> <br/>
-                <input type="email" name="email" placeholder="email" class="form-control"> <br/>
-                <input type="number" name="phone" placeholder="Phone" class="form-control"> <br/>
-                <input type="password" name="password" placeholder="password" class="form-control"> <br>
+            <!-- {{signupForm.value | json}} -->
+            <form [formGroup]="signupForm">
+                <input [class.is-invalid]="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched" formControlName="firstName" type="text" name="firstName" placeholder="Firstname" [(ngModel)]="firstName" class="form-control">
+                <small [class.d-none]="signupForm.get('firstName')?.valid || signupForm.get('firstName')?.untouched" class="text-danger">Firstname is required</small> <br>
 
-                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                <input formControlName="lastName" type="text" name="lastName" placeholder="Lastname" [(ngModel)]="lastName" class="form-control"> <br/>
+                <input formControlName="email" type="email" name="email" placeholder="email" [(ngModel)]="email" class="form-control"> <br/>
+                <input formControlName="phone" type="number" name="phone" placeholder="Phone" [(ngModel)]="phone" class="form-control"> <br/>
+                
+                <div formGroupName="password">
+                   <input formControlName="password" type="password" name="password" placeholder="Password"  [(ngModel)]="password" class="form-control"> <br>
+                   <input formControlName="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="confirmPassword" class="form-control"> 
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" (click)="signUp()">Submit</button>
+                <button type="submit" class="btn btn-danger btn-block" (click)="loadApiData()">Load data</button>
+
 
             </form>
             <small class="mx-auto">Already have an account? <a routerLink="/signin">Sign in here</a></small>

@@ -7,6 +7,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,15 @@ import { SignupComponent } from './signup/signup.component';
     NavbarComponent,
     HomeComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ErrorpageComponent,
+    DashboardComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

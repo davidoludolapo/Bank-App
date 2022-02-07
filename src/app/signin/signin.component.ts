@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
+  // this._router.navigate(["/dashboard"])
+
   constructor() { }
 
   ngOnInit(): void {

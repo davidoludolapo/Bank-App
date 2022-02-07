@@ -1,29 +1,39 @@
 
-  @keyframes bounceTop_01 {
-    0%,
-    100% {
-      transform: translateY(-30px);
-    }
-    50% {
-      transform: translateY(0px);
-    }
-  }
+ 
   
   
   .home {
    
     height: 100vh;
-    background-color: rgba(83, 41, 161, 0.637);
+    
+
+
+  /* ff 3.6+ */
+  background:-moz-radial-gradient(circle at 50% 50%, rgba(228, 243, 255, 1) 0%, rgba(182, 215, 255, 1) 100%);
+
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-radial-gradient(circle at 50% 50%, rgba(228, 243, 255, 1) 0%, rgba(182, 215, 255, 1) 100%);
+
+  /* opera 11.10+ */
+  background:-o-radial-gradient(circle at 50% 50%, rgba(228, 243, 255, 1) 0%, rgba(182, 215, 255, 1) 100%);
+
+  /* ie 10+ */
+  background:-ms-radial-gradient(circle at 50% 50%, rgba(228, 243, 255, 1) 0%, rgba(182, 215, 255, 1) 100%);
+
+  /* global 92%+ browsers support */
+  background:radial-gradient(circle at 50% 50%, rgba(228, 243, 255, 1) 0%, rgba(182, 215, 255, 1) 100%);
+
+
+
+    display: flex;
     /* border-radius: 0 0 200px 0; */
-    position: relative;
-    /* z-index: 1; */
-    overflow: auto;
+    overflow: hidden;
   }
   
   .home-text h1 {
     font-size: 50px;
     font-weight: 400;
-    color: #ffffff;
+    color: #000000;
     margin: 0 0 20px;
     text-transform: capitalize;
   }
@@ -68,4 +78,12 @@
      animation: bounceTop_01 3s ease infinite;
   }
     
-  
+  @keyframes bounceTop_01 {
+    0%,
+    100% {
+      transform: translateY(-30px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+  }
