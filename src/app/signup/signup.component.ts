@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,63 +17,52 @@ export class SignupComponent implements OnInit {
   public confirmPassword:string = '';
   public allUsers:any = []
   
-  constructor(private fb: FormBuilder) { }
+  constructor(private _anyService:UserService, private _router:Router) { }
   
   ngOnInit(): void {
-    if (localStorage["localUsers"]){
-      this.allUsers = JSON.parse(localStorage["localUsers"])
-      console.log(this.allUsers);
-      
-    } else {
-      this.allUsers=[]
-      console.log(this.allUsers);
-      
-    }
-    this.allUsers = localStorage["localUsers"]?JSON.parse(localStorage["localUsers"]):[]
-      console.log(this.allUsers)
+    this.allUsers = this._anyService.getAllUsers()
+    console.log(this._anyService);
+    console.log(this.allUsers);
       
   }
 
 
-  signupForm = this.fb.group({
-    firstName: ['Dolapo', Validators.required],
-    lastName: [''],
-    email: [''],
-    phone: [],
-    password: this.fb.group({
-      password: [''],
-      confirmPassword: [''],
-    })
+  // signupForm = this.fb.group({
+  //   firstName: ['Dolapo', Validators.required],
+  //   lastName: [''],
+  //   email: [''],
+  //   phone: [],
+  //   password: this.fb.group({
+  //     password: [''],
+  //     confirmPassword: [''],
+  //   })
 
-  })
-  
-//  signupForm = new FormGroup({
-//     firstName: new FormControl('Oludolapo'),
-//     lastName: new FormControl(''),
-//     email: new FormControl(''),
-//     phone: new FormControl(''),
-//     password: new FormControl(''),
-//     confirmPassword: new FormControl('')
-//   });
+  // })
 
-  loadApiData(){
-    this.signupForm.patchValue({
-      firstName: 'Dayo',
-      lastName: 'John',
-      email: 'test@gmail.com',
-      phone: 234,
-      password: {
-        password: 'test',
-        confirmPassword: 'test'
-      }
-    })
-  }
+
+  // loadApiData(){
+  //   this.signupForm.patchValue({
+  //     firstName: 'Dayo',
+  //     lastName: 'John',
+  //     email: 'test@gmail.com',
+  //     phone: 234,
+  //     password: {
+  //       password: 'test',
+  //       confirmPassword: 'test'
+  //     }
+  //   })
+  // }
 
   signUp(){
-    let {firstName,lastName,email,phone,password,confirmPassword,allUsers} = this
+    let {firstName,lastName,email,phone,password,confirmPassword} = this
+    if (this._anyService) {
+      alert('proceed to sign in')
+      this._router.navigate(['/signin'])
+    }
+
     this.allUsers.push({firstName,lastName,email,phone,password,confirmPassword})
-    console.log(allUsers);
-    localStorage["localUsers"] =JSON.stringify(allUsers)
+    console.log(this.allUsers);
+    localStorage["localUsers"] =JSON.stringify(this.allUsers)
     
   }
 
