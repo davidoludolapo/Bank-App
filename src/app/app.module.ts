@@ -10,7 +10,6 @@ import { SignupComponent } from './signup/signup.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     SignupComponent,
     ErrorpageComponent,
     DashboardComponent,
-    SidenavComponent,
+
     
   ],
   imports: [
