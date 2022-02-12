@@ -61,7 +61,7 @@ export class SignupComponent implements OnInit {
     }
 
     this.allUsers.push({firstName,lastName,email,phone,password,confirmPassword})
-    console.log(this.allUsers);
+    // console.log(this.allUsers);
     localStorage["localUsers"] =JSON.stringify(this.allUsers)
     
   }

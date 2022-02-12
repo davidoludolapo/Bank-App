@@ -10,6 +10,8 @@ import { SignupComponent } from './signup/signup.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SignupComponent,
     ErrorpageComponent,
     DashboardComponent,
+    WithdrawComponent,
+    TodoComponent,
     
 
     

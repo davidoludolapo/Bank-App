@@ -20,7 +20,7 @@ html {
 
 
 body {
-	background: var(--grey);
+	background: grey;
 	overflow-x: hidden;
 }
 

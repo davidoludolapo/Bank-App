@@ -1,8 +1,8 @@
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
-			<i class='bx bxs-bank'></i>
-			<span class="text">Cashbag</span>
+			<i class='bx bx-analyse' ></i>
+			<span class="text">Roland Bank</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="">
@@ -19,14 +19,8 @@
 			</li>
 			<li>
 				<a href="#">
-					<i class='bx bxs-credit-card' ></i>
-					<span class="text">Make Payment</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
 					<i class='bx bx-money-withdraw' ></i>
-					<span class="text">Withdrawal</span>
+					<span class="text">Withdraw</span>
 				</a>
 			</li>
 			<li>
@@ -101,12 +95,13 @@
 						<h3>₦250,000</h3>
 						<p>Wallet</p>
 					</span>
+
 				</li>
 				<li>
-					<i class='bx bxs-dollar-circle' ></i>
+					<i class='bx bxs-lock-alt' ></i>
 					<span class="text">
-						<h3>$2543</h3>
-						<p>Total Sales</p>
+						<h3>₦25,000</h3>
+						<p>Emergency Funds</p>
 					</span>
 				</li>
 			</ul>
@@ -122,50 +117,55 @@
 					<table>
 						<thead>
 							<tr>
-								<th>User</th>
-								<th>Date Order</th>
+								<th>Account name</th>
+								<th>Account number</th>
+								<th>Date</th>
 								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+									<img [src]="image" alt="zenith">
+									<p>Dolapo Odesola</p>
 								</td>
+                <td>
+                  <p>02389*****</p>
+                </td>
 								<td>01-10-2021</td>
 								<td><span class="status completed">Completed</span></td>
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+									<img [src]="image1" alt="zenith">
+									<p>Akingbade Jimoh</p>
 								</td>
-								<td>01-10-2021</td>
+                <td>
+                  <p>02389*****</p>
+                </td>
+								<td>07-14-2022</td>
 								<td><span class="status pending">Pending</span></td>
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+                  <img [src]="image2" alt="zenith">
+									<p>Chigozie Kingsley</p>
 								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
+                <td>
+                  <p>02389*****</p>
+                </td>
+								<td>01-02-2022</td>
+								<td><span class="status process">Processing</span></td>
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+                  <img [src]="image3" alt="zenith">
+									<p>Jessica Pearson</p>
 								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
+                <td>
+                  <p>02389*****</p>
+                </td>
+								<td>01-01-2022</td>
 								<td><span class="status completed">Completed</span></td>
 							</tr>
 						</tbody>
@@ -173,11 +173,12 @@
 				</div>
 				<div class="todo">
 					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
+						<h3>To-do List</h3>
+						<!-- <i class='bx bx-plus' ></i> -->
+						<button class="btn btn-success rounded"><i class='bx bx-plus' ></i></button>
 						<i class='bx bx-filter' ></i>
 					</div>
-					<ul class="todo-list">
+					<!-- <ul class="todo-list">
 						<li class="completed">
 							<p>Todo List</p>
 							<i class='bx bx-dots-vertical-rounded' ></i>
@@ -198,7 +199,7 @@
 							<p>Todo List</p>
 							<i class='bx bx-dots-vertical-rounded' ></i>
 						</li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 		</main>
