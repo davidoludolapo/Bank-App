@@ -5,6 +5,7 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { TransferComponent } from './transfer/transfer.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:"signin", component:SigninComponent},
   {path:"signup", component:SignupComponent},
   {path:"dashboard", component:DashboardComponent},
+  {path: "transfer", component:TransferComponent},
   {path:"withdraw", component:WithdrawComponent},
   {path: "**", component: ErrorpageComponent}
 ];

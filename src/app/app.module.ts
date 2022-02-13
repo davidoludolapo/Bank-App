@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { TodoComponent } from './todo/todo.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TodoComponent } from './todo/todo.component';
     DashboardComponent,
     WithdrawComponent,
     TodoComponent,
+    TransferComponent,
     
 
     

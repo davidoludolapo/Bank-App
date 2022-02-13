@@ -9,61 +9,38 @@ import { UserService } from '../user.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  public firstName:string = '';
-  public lastName:string = '';
-  public email:string = '';
-  public phone:number = 0;
-  public password:string = '';
-  public confirmPassword:string = '';
-  public allUsers:any = []
-  
-  constructor(private _anyService:UserService, private _router:Router) { }
-  
+  public firstName: string = '';
+  public lastName: string = '';
+  public email: string = '';
+  public phone: number = 0;
+  public password: string = '';
+  public accountNo: string = "";
+  public account_bal: number = 100000;
+  public confirmPassword: string = '';
+  public allUsers: any = []
+
+  constructor(private _anyService: UserService, private _router: Router) { }
+
   ngOnInit(): void {
     this.allUsers = this._anyService.getAllUsers()
     console.log(this._anyService);
     console.log(this.allUsers);
-      
+
   }
 
-
-  // signupForm = this.fb.group({
-  //   firstName: ['Dolapo', Validators.required],
-  //   lastName: [''],
-  //   email: [''],
-  //   phone: [],
-  //   password: this.fb.group({
-  //     password: [''],
-  //     confirmPassword: [''],
-  //   })
-
-  // })
-
-
-  // loadApiData(){
-  //   this.signupForm.patchValue({
-  //     firstName: 'Dayo',
-  //     lastName: 'John',
-  //     email: 'test@gmail.com',
-  //     phone: 234,
-  //     password: {
-  //       password: 'test',
-  //       confirmPassword: 'test'
-  //     }
-  //   })
-  // }
-
-  signUp(){
-    let {firstName,lastName,email,phone,password,confirmPassword} = this
+  signUp() {
+    let { firstName, lastName, email, phone, password, confirmPassword, accountNo, account_bal } = this
+    accountNo = `023${Math.floor(Math.random() * 10000000)}`
+    console.log(this.accountNo);
     if (this._anyService) {
       alert('proceed to sign in')
       this._router.navigate(['/signin'])
     }
 
-    this.allUsers.push({firstName,lastName,email,phone,password,confirmPassword})
+    this.allUsers.push({ firstName, lastName, email, phone, password, confirmPassword, accountNo, account_bal })
     // console.log(this.allUsers);
-    localStorage["localUsers"] =JSON.stringify(this.allUsers)
-    
+    localStorage["localUsers"] = JSON.stringify(this.allUsers)
+
   }
 
 
