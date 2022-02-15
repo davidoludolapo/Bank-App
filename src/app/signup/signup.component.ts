@@ -19,7 +19,8 @@ export class SignupComponent implements OnInit {
   public confirmPassword: string = '';
   public allUsers: any = []
 
-  constructor(private _anyService: UserService, private _router: Router) { }
+
+  constructor(private _anyService: UserService, private _router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.allUsers = this._anyService.getAllUsers()
@@ -30,17 +31,17 @@ export class SignupComponent implements OnInit {
 
   signUp() {
     let { firstName, lastName, email, phone, password, confirmPassword, accountNo, account_bal } = this
-    accountNo = `023${Math.floor(Math.random() * 10000000)}`
+    accountNo = `223${Math.floor(Math.random() * 10000000)}`
     console.log(this.accountNo);
-    if (this._anyService) {
-      alert('proceed to sign in')
-      this._router.navigate(['/signin'])
-    }
 
     this.allUsers.push({ firstName, lastName, email, phone, password, confirmPassword, accountNo, account_bal })
     // console.log(this.allUsers);
     localStorage["localUsers"] = JSON.stringify(this.allUsers)
 
+    if (this._anyService) {
+      alert('proceed to sign in')
+      this._router.navigate(['/signin'])
+    }
   }
 
 

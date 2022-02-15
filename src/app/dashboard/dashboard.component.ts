@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   public image2: string = "../assets/firstbank.png"
   public image3: string = "../assets/wema.png"
   public user: any = ''
+  public currentUser: any = []
 
   constructor() { }
 
@@ -19,6 +20,10 @@ export class DashboardComponent implements OnInit {
     this.user = JSON.parse(localStorage["currentUser"])
     console.log(this.user.accountNo);
 
+  }
+
+  logOut(){
+    localStorage.removeItem("currentUser")
   }
 
 }
