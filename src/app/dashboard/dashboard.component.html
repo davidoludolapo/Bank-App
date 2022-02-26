@@ -61,7 +61,7 @@
   <main>
     <div class="head-title">
       <div class="left">
-        <h3 class="mb-3">Hi {{user.firstName}} 😀</h3>
+        <h3 class="mb-3">Hi {{ user.firstName }} 😀</h3>
         <ul class="breadcrumb">
           <li>
             <a href="#">Dashboard</a>
@@ -82,7 +82,7 @@
       <li>
         <i class="bx bx-shield-alt-2"></i>
         <span class="text">
-          <h3>₦{{user.account_bal}}</h3>
+          <h3>₦{{ user.account_bal }}</h3>
           <p>Main Balance</p>
         </span>
       </li>
@@ -122,7 +122,7 @@
             <tr>
               <td>
                 <img [src]="image" alt="zenith" />
-                <p>{{user.firstName}}</p>
+                <p>{{ user.firstName }}</p>
               </td>
               <td>
                 <p>02389*****</p>
@@ -168,12 +168,29 @@
       </div>
       <div class="todo">
         <div class="head">
-          <h5>To-do</h5> 
-          <input type="text" name="" class="form-control p-2" placeholder="Add" [(ngModel)]="name">
-          <button class="btn btn-danger rounded p-2" *ngIf="!editData; else elseBlock" (click)="addTask($event)" [disabled]="!name.length">
+          <h5>To-do</h5>
+          <input
+            type="text"
+            name=""
+            class="form-control p-2"
+            placeholder="Add"
+            [(ngModel)]="name"
+          />
+          <button
+            class="btn btn-danger rounded p-2"
+            *ngIf="!editData; else elseBlock"
+            (click)="addTask($event)"
+            [disabled]="!name.length"
+          >
             <i class="bx bx-plus"></i>
           </button>
-          <ng-template #elseBlock><button class="btn btn-success rounded p-2" (click)="saveChanges()"><i class='bx bx-check'></i></button></ng-template>
+          <ng-template #elseBlock
+            ><button
+              class="btn btn-success rounded p-2"
+              (click)="saveChanges()"
+            >
+              <i class="bx bx-check"></i></button
+          ></ng-template>
         </div>
         <ul class="list-group mx-auto todos" >
           <li class="list-group-item align-items-center p-2 d-flex justify-content-between" *ngFor="let task of allTasks let i = index"> 
