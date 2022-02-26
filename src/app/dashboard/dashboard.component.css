@@ -498,6 +498,11 @@ body {
 #content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
 }
+
+#content main .todos li {
+    background: #f4f7faf6;
+    margin-bottom: 10px;
+}
 /* MAIN */
 /* CONTENT */
 
