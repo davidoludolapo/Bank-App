@@ -5,44 +5,17 @@
       <hr />
 
       <form action="" class="text-center">
-        <input
-          type="number"
-          [(ngModel)]="bfaccountName"
-          name="bfaccountName"
-          placeholder="Account Number"
-          class="form-control"
-        />
+        <input type="number" [(ngModel)]="bfaccountName" name="bfaccountName" placeholder="Account Number"
+          class="form-control" />
         <br />
-        <input
-          type="number"
-          [(ngModel)]="amount"
-          name="amount"
-          placeholder="Amount"
-          class="form-control"
-        />
+        <input type="number" [(ngModel)]="amount" name="amount" placeholder="Amount" class="form-control" />
         <br />
 
-        <input
-          type="password"
-          name="password"
-          [(ngModel)]="password"
-          placeholder="Password"
-          class="form-control"
-        />
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Password" class="form-control" />
         <br />
-        <input
-          type="text"
-          name="reason"
-          [(ngModel)]="reason"
-          placeholder="Reason for transfer"
-          class="form-control"
-        />
+        <input type="text" name="reason" [(ngModel)]="reason" placeholder="Reason for transfer" class="form-control" />
         <br />
-        <button
-          class="btn-success btn w-100"
-          type="button"
-          (click)="transfer()"
-        >
+        <button class="btn-success btn w-100" type="button" (click)="transfer()">
           Transfer
         </button>
       </form>

@@ -24,6 +24,7 @@ export class TransferComponent implements OnInit {
 
   }
   transfer() {
+    // Reciever
     this.receiver = (this.allUsers.find((val: any, i: number) => val.accountNo == this.bfaccountName))
 
 
